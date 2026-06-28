@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Zulaikha Abdul Aziz</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* CSS RESET & THEME SETUP */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://i.pinimg.com/736x/c3/3b/15/c33b15d31396bfa0f55966c9b3f3d3a0.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01); 
+            width: 100%;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #1e3a8a;
+            font-size: 22px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .live-clock {
+            font-size: 11px;
+            color: #475569;
+            font-weight: 500;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.3s;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #1e3a8a;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #1e3a8a;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover::after, nav ul li a.active::after {
+            width: 100%;
+        }
+
+        /* HERO BANNER (KINI SAMA MACAM EDUCATION.HTML) */
+        .hero-banner {
+            max-width: 1200px;
+            margin: 40px auto 30px;
+            width: calc(100% - 40px);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+            border-radius: 30px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.6) 70%, rgba(255, 255, 255, 0.2) 100%), 
+                        url('https://i.pinimg.com/736x/c3/3b/15/c33b15d31396bfa0f55966c9b3f3d3a0.jpg');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-banner-content {
+            width: 100%;
+            max-width: 650px; 
+            padding: 60px;
+            z-index: 2;
+            text-align: left;
+        }
+
+        .hero-banner-content .tagline {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1e3a8a;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 4px 14px;
+            border-radius: 50px;
+            border: 1px solid rgba(30, 58, 138, 0.15);
+        }
+
+        .hero-banner-content .giant-name {
+            font-family: 'Poppins', serif;
+            font-size: 45px;
+            font-weight: 700;
+            color: #1e3a8a;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-banner-content .description {
+            font-size: 14.5px;
+            color: #1e293b;
+            font-weight: 500;
+            line-height: 1.8;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 15px;
+            border-radius: 16px;
+            border-left: 4px solid #1e3a8a;
+        }
+
+        /* MAIN CONTENT SPLIT LAYOUT */
+        main {
+            max-width: 1200px;
+            margin: 20px auto 80px;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* REKAAN BORANG & KAD */
+        .contact-card, .form-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card h2, .form-card h2 {
+            font-family: 'Poppins', serif;
+            font-size: 22px;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact-card h2::after, .form-card h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 35px;
+            height: 3px;
+            background: #1e3a8a;
+            border-radius: 2px;
+        }
+
+        /* SUSUNAN INFO PERHUBUNGAN */
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            text-decoration: none;
+        }
+
+        .info-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(30, 58, 138, 0.06);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3a8a;
+            font-size: 18px;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .info-item:hover .info-icon {
+            background: #1e3a8a;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        .info-text p {
+            font-size: 12px;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .info-text h4 {
+            font-size: 15px;
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        /* SOSIAL MEDIA BADGES */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(30, 58, 138, 0.1);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #475569;
+            text-decoration: none;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            border: 1px solid rgba(255,255,255,0.6);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: #1e3a8a;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(30, 58, 138, 0.15);
+        }
+
+        /* BORANG INPUT STYLING */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 8px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid rgba(30, 58, 138, 0.15);
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            color: #1e293b;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #1e3a8a;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.08);
+        }
+
+        /* BUTTON SUBMIT DENGAN HOVER EFFECT */
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.25);
+            background: linear-gradient(90deg, #1e3a8a, #1d4ed8);
+        }
+
+        .btn-submit i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-submit:hover i {
+            transform: translateX(4px);
+        }
+
+        /* MUSIC FLOATING CONTROL */
+        .music-control {
+            position: fixed;
+            top: 85px;
+            left: 20px;
+            z-index: 9999;
+        }
+
+        .music-control button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(145deg, #ffffff, #e2e8f0);
+            color: #1e3a8a;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+        }
+
+        .music-control button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(145deg, #e2e8f0, #ffffff);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            text-align: center;
+            padding: 25px;
+            margin-top: auto;
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #002445;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 968px) {
+            .hero-banner {
+                min-height: 320px;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 60%, rgba(255, 255, 255, 0.75) 100%), 
+                            url('https://i.pinimg.com/736x/f8/00/be/f800bea4f45729f2edb06830c44482c9.jpg');
+                background-size: cover;
+                background-position: center;
+            }
+            .hero-banner-content {
+                padding: 40px 25px;
+                text-align: center;
+                max-width: 100%;
+            }
+            .hero-banner-content .giant-name {
+                font-size: 34px;
+            }
+            .hero-banner-content .description {
+                margin: 0 auto;
+                border-left: none;
+                border-top: 4px solid #1e3a8a;
+            }
+            .contact-container { grid-template-columns: 1fr; gap: 30px; }
+            nav { flex-direction: column; gap: 15px; }
+            .logo-container { align-items: center; }
+            nav ul { gap: 15px; }
+            .music-control { top: auto; bottom: 20px; left: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo-container">
+            <h2 class="logo">ZULAIKHA ABDUL AZIZ</h2>
+            <div class="live-clock" id="liveClock">Loading date & time...</div>
+        </div>
+        
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="memories.html">Memories</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="music-control">
+    <select id="trackSelect" onchange="changeTrack()" style="padding: 8px 12px; border-radius: 50px; border: 1px solid #cbd5e1; font-family: 'Poppins', sans-serif; font-size: 13px; color: #1e3a8a; font-weight: 500; background: white; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-right: 5px; outline: none;">
+        <option value="music/justin.mp4">Love, Maybe</option>
+        <option value="music/justin bie.mp4">Baby</option>
+        <option value="music/s.mp4">Blue</option>
+    </select>
+    
+    <button onclick="toggleMusic()" id="musicBtn">🎵 Music OFF</button>
+    
+    <audio id="bgmusic" loop>
+        <source id="musicSource" src="music/justin.mp4" type="audio/mp4">
+    </audio>
+</div>
+
+<section class="hero-banner">
+    <div class="hero-banner-content">
+        <span class="tagline">Get In Touch</span>
+        <h1 class="giant-name">CONTACT ME</h1>
+        <p class="description">
+            Have a question, feedback, or an exciting professional opportunity? Feel free to drop a message or reach out directly through any of my contact channels below.
+        </p>
+    </div>
+</section>
+
+<main>
+    <div class="contact-container">
+        
+        <div class="contact-card">
+            <h2>CONTACT INFO</h2>
+            
+            <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-user"></i></div>
+                <div class="info-text">
+                    <p>Name</p>
+                    <h4>ZULAIKHA BINTI ABDUL AZIZ</h4>
+                </div>
+            </div>
+
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=zuaziz@gmail.com" target="_blank" class="info-item" title="Click to email me">
+                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="info-text">
+                     <p>Email</p>
+                     <h4>zuaziz@gmail.com</h4>
+                </div>
+            </a>
+
+            <a href="https://wa.me/60102383430" target="_blank" class="info-item" title="Click to WhatsApp me">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="info-text">
+                    <p>Phone</p>
+                    <h4>010-2383430</h4>
+                </div>
+            </a>
+
+            <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="info-text">
+                    <p>Location</p>
+                    <h4>Kuala Lumpur, Malaysia</h4>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://t.me/merenggss" target="_blank" class="social-icon" title="Telegram">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+
+                <a href="https://github.com/nama-username-awak" target="_blank" class="social-icon" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://www.instagram.com/zlkhaziz/" target="_blank" class="social-icon" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="form-card">
+            <h2>SEND A MESSAGE</h2>
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="access_key" value="e40c74b5-1b4d-435f-8bd3-3122a609409b">
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                   <label>Email Address</label>
+                   <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                   <label>Message</label>
+                   <textarea rows="5" name="message" placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    Send Message <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 Zulaikha Abdul Aziz. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Jam & Tarikh Live
+function updateClock() {
+    const clockElement = document.getElementById("liveClock");
+    if (clockElement) {
+        const now = new Date();
+        const optionsDate = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        const dateString = now.toLocaleDateString('en-MY', optionsDate);
+        const timeString = now.toLocaleTimeString('en-MY', { hour12: false });
+        clockElement.innerHTML = `<i class="fa-regular fa-calendar-days"></i> ${dateString} | <i class="fa-regular fa-clock"></i> ${timeString}`;
+    }
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// Sistem Muzik
+const music = document.getElementById("bgmusic");
+const btn = document.getElementById("musicBtn");
+const trackSelect = document.getElementById("trackSelect");
+
+if (music) {
+    music.volume = 0.8;
+}
+
+function getSavedTime() {
+    try {
+        const musicTime = localStorage.getItem("musicCurrentTime");
+        if (musicTime) {
+            const parsedTime = parseFloat(musicTime);
+            if (!isNaN(parsedTime) && isFinite(parsedTime) && parsedTime > 0) {
+                return parsedTime;
+            }
+        }
+    } catch (e) {}
+    return 0;
+}
+
+function changeTrack() {
+    const selectedTrack = trackSelect.value;
+    const isPlaying = !music.paused;
+
+    localStorage.setItem("selectedTrack", selectedTrack);
+    music.src = selectedTrack;
+    music.load();
+    localStorage.setItem("musicCurrentTime", 0);
+
+    if (isPlaying) {
+        music.play().then(() => {
+            btn.innerHTML = "🎵 Music ON";
+        }).catch(err => {
+            btn.innerHTML = "🎵 Music OFF";
+            localStorage.setItem("musicStatus", "paused");
+        });
+    }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    try {
+        const musicStatus = localStorage.getItem("musicStatus");
+        const savedTrack = localStorage.getItem("selectedTrack");
+        const savedTime = getSavedTime();
+
+        if (savedTrack && trackSelect) {
+            trackSelect.value = savedTrack;
+            music.src = savedTrack;
+            music.load();
+        }
+
+        if (savedTime > 0) {
+            music.addEventListener('loadedmetadata', function() {
+                music.currentTime = savedTime;
+            }, { once: true });
+        }
+
+        if (musicStatus === "playing") {
+            let playPromise = music.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    btn.innerHTML = "🎵 Music ON";
+                }).catch(err => {
+                    btn.innerHTML = "🎵 Music OFF";
+                    localStorage.setItem("musicStatus", "paused");
+                });
+            }
+        } else {
+            btn.innerHTML = "🎵 Music OFF";
+        }
+    } catch (e) {
+        localStorage.removeItem("musicCurrentTime");
+        btn.innerHTML = "🎵 Music OFF";
+    }
+});
+
+setInterval(() => {
+    try {
+        if (music && !music.paused && !isNaN(music.currentTime) && music.currentTime > 0) {
+            localStorage.setItem("musicCurrentTime", music.currentTime);
+        }
+    } catch (e) {}
+}, 1000);
+
+function toggleMusic() {
+    try {
+        if (!music.paused) {
+            music.pause();
+            btn.innerHTML = "🎵 Music OFF";
+            localStorage.setItem("musicStatus", "paused");
+        } else {
+            music.play().then(() => {
+                btn.innerHTML = "🎵 Music ON";
+                localStorage.setItem("musicStatus", "playing");
+            }).catch(error => {
+                alert("Nota: Sila pastikan fail lagu berada di dalam folder 'music' dengan nama yang betul.");
+            });
+        }
+    } catch(e) {
+        localStorage.clear();
+        btn.innerHTML = "🎵 Music OFF";
+    }
+}
+</script>
+
+</body>
+</html>

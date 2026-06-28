@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Zulaikha Abdul Aziz</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* CSS RESET & THEME SETUP */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://i.pinimg.com/736x/c3/3b/15/c33b15d31396bfa0f55966c9b3f3d3a0.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* HEADER & NAVIGATION (Diselaraskan dengan education.html) */
+        header {
+            background-color: rgba(255, 255, 255, 0.4); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01); 
+            width: 100%;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #1e3a8a;
+            font-size: 22px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .live-clock {
+            font-size: 11px;
+            color: #475569;
+            font-weight: 500;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.3s;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #1e3a8a;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #1e3a8a;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover::after, nav ul li a.active::after {
+            width: 100%;
+        }
+
+        /* HERO BANNER KINI MENGGUNAKAN GAMBAR LATAR BELAKANG PENUH */
+        .hero-banner {
+            max-width: 1200px;
+            margin: 40px auto 30px;
+            width: calc(100% - 40px);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+            border-radius: 30px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.6) 70%, rgba(255, 255, 255, 0.2) 100%), 
+                        url('https://i.pinimg.com/736x/c3/3b/15/c33b15d31396bfa0f55966c9b3f3d3a0.jpg');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-banner-content {
+            width: 100%;
+            max-width: 650px; 
+            padding: 60px;
+            z-index: 2;
+        }
+
+        .hero-banner-content .tagline {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1e3a8a;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 4px 14px;
+            border-radius: 50px;
+            border: 1px solid rgba(30, 58, 138, 0.15);
+        }
+
+        .hero-banner-content .giant-name {
+            font-family: 'Poppins', serif;
+            font-size: 45px;
+            font-weight: 700;
+            color: #1e3a8a;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-banner-content .description {
+            font-size: 14.5px;
+            color: #1e293b;
+            font-weight: 500;
+            line-height: 1.8;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 15px;
+            border-radius: 16px;
+            border-left: 4px solid #1e3a8a;
+        }
+
+        /* CARD GRID SECTION */
+        .cards-container {
+            max-width: 1200px;
+            margin: 30px auto 80px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.06);
+        }
+
+        .card h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 19px;
+            color: #1e3a8a;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(30, 58, 138, 0.15);
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 15px;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            font-size: 14px;
+            color: #334155;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card ul li i {
+            color: #1e3a8a;
+            font-size: 14px;
+        }
+
+        /* MUSIC CONTROL BUTTON */
+        .music-control {
+            position: fixed;
+            top: 85px;
+            left: 20px;
+            z-index: 9999;
+        }
+
+        .music-control select {
+            padding: 8px 12px;
+            border-radius: 50px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            color: #1e3a8a;
+            font-weight: 500;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-right: 5px;
+            outline: none;
+        }
+
+        .music-control button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(145deg, #ffffff, #e2e8f0);
+            color: #1e3a8a;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+        }
+
+        .music-control button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(145deg, #e2e8f0, #ffffff);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: rgba(255, 255, 255, 0.5); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            text-align: center;
+            padding: 25px;
+            margin-top: auto;
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #002445;
+        }
+
+        /* RESPONSIVE DESIGN BREAKPOINTS */
+        @media (max-width: 968px) {
+            .hero-banner {
+                min-height: 320px;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 60%, rgba(255, 255, 255, 0.75) 100%), 
+                            url('https://i.pinimg.com/736x/fa/98/40/fa98409a36b3a9a1daf752a3b5f73719.jpg');
+                background-size: cover;
+                background-position: center;
+            }
+            .hero-banner-content {
+                padding: 40px 25px;
+                text-align: center;
+                max-width: 100%;
+            }
+            .hero-banner-content .giant-name {
+                font-size: 34px;
+            }
+            .hero-banner-content .description {
+                margin: 0 auto;
+                border-left: none;
+                border-top: 4px solid #1e3a8a;
+            }
+            nav { flex-direction: column; gap: 15px; }
+            .logo-container { align-items: center; }
+            nav ul { gap: 15px; }
+            .music-control { top: auto; bottom: 20px; left: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo-container">
+            <h2 class="logo">ZULAIKHA ABDUL AZIZ</h2>
+            <div class="live-clock" id="liveClock">Loading date & time...</div>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="memories.html">Memories</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="music-control">
+    <select id="trackSelect" onchange="changeTrack()">
+        <option value="music/justin.mp4">Love, Maybe</option>
+        <option value="music/justin bie.mp4">Baby</option>
+        <option value="music/s.mp4">Blue</option>
+    </select>
+    
+    <button onclick="toggleMusic()" id="musicBtn">🎵 Music OFF</button>
+    
+    <audio id="bgmusic" loop>
+        <source id="musicSource" src="music/justin.mp4" type="audio/mp3">
+    </audio>
+</div>
+
+<section class="hero-banner">
+    <div class="hero-banner-content">
+        <span class="tagline">Hello, I'm Zulaikha Abdul Aziz</span>
+        <h1 class="giant-name">ABOUT ME</h1>
+        <p class="description">
+            Diploma in Library Informatics student who is passionate about information management, archives, and digital technology.
+        </p>
+    </div>
+</section>
+
+<main style="max-width: 1200px; margin: 0 auto; width: 100%;">
+    <section class="cards-container">
+
+        <div class="card">
+            <h2>PERSONAL BACKGROUND</h2>
+            <p>
+                My name is <strong>Zulaikha Abdul Aziz</strong>, and I am currently
+                pursuing a Diploma in Library Informatics at Universiti Teknologi
+                MARA (UiTM). 
+            </p>
+            <p>
+                I am passionate about information management,
+                records administration, archival preservation, and digital
+                technologies.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>CAREER INTERESTS</h2>
+            <ul>
+                <li><i class="fa-solid fa-folder-open"></i> Records Management</li>
+                <li><i class="fa-solid fa-box-archive"></i> Archives Administration</li>
+                <li><i class="fa-solid fa-sitemap"></i> Information Organization</li>
+                <li><i class="fa-solid fa-laptop-code"></i> Digital Libraries</li>
+                <li><i class="fa-solid fa-code"></i> Web Development</li>
+                <li><i class="fa-solid fa-brain"></i> Knowledge Management</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>MY STRENGTHS</h2>
+            <ul>
+                <li><i class="fa-solid fa-circle-check"></i> Responsible & hardworking</li>
+                <li><i class="fa-solid fa-circle-check"></i> Good communication skills</li>
+                <li><i class="fa-solid fa-circle-check"></i> Able to work in teams</li>
+                <li><i class="fa-solid fa-circle-check"></i> Fast learner</li>
+                <li><i class="fa-solid fa-detail"></i> Detail-oriented</li>
+                <li><i class="fa-solid fa-circle-check"></i> Highly adaptable</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>MY GOAL</h2>
+            <p>
+                To become a professional information specialist who
+                contributes to the effective management and preservation of
+                information resources.
+            </p>
+            <p>
+                I aim to continuously improve my digital and technological skills to meet the demands of the modern information industry.
+            </p>
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Zulaikha Abdul Aziz. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Jam & Tarikh Live
+function updateClock() {
+    const clockElement = document.getElementById("liveClock");
+    if (clockElement) {
+        const now = new Date();
+        const optionsDate = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        const dateString = now.toLocaleDateString('en-MY', optionsDate);
+        const timeString = now.toLocaleTimeString('en-MY', { hour12: false });
+        clockElement.innerHTML = `<i class="fa-regular fa-calendar-days"></i> ${dateString} | <i class="fa-regular fa-clock"></i> ${timeString}`;
+    }
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// Sistem Muzik
+const music = document.getElementById("bgmusic");
+const btn = document.getElementById("musicBtn");
+const trackSelect = document.getElementById("trackSelect");
+
+if (music) {
+    music.volume = 0.8;
+}
+
+function getSavedTime() {
+    try {
+        const musicTime = localStorage.getItem("musicCurrentTime");
+        if (musicTime) {
+            const parsedTime = parseFloat(musicTime);
+            if (!isNaN(parsedTime) && isFinite(parsedTime) && parsedTime > 0) {
+                return parsedTime;
+            }
+        }
+    } catch (e) {}
+    return 0;
+}
+
+function changeTrack() {
+    const selectedTrack = trackSelect.value;
+    const isPlaying = !music.paused;
+
+    localStorage.setItem("selectedTrack", selectedTrack);
+    music.src = selectedTrack;
+    music.load();
+    localStorage.setItem("musicCurrentTime", 0);
+
+    if (isPlaying) {
+        music.play().then(() => {
+            btn.innerHTML = "🎵 Music ON";
+        }).catch(err => {
+            btn.innerHTML = "🎵 Music OFF";
+            localStorage.setItem("musicStatus", "paused");
+        });
+    }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    try {
+        const musicStatus = localStorage.getItem("musicStatus");
+        const savedTrack = localStorage.getItem("selectedTrack");
+        const savedTime = getSavedTime();
+
+        if (savedTrack && trackSelect) {
+            trackSelect.value = savedTrack;
+            music.src = savedTrack;
+            music.load();
+        }
+
+        if (savedTime > 0) {
+            music.addEventListener('loadedmetadata', function() {
+                music.currentTime = savedTime;
+            }, { once: true });
+        }
+
+        if (musicStatus === "playing") {
+            let playPromise = music.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    btn.innerHTML = "🎵 Music ON";
+                }).catch(err => {
+                    btn.innerHTML = "🎵 Music OFF";
+                    localStorage.setItem("musicStatus", "paused");
+                });
+            }
+        } else {
+            btn.innerHTML = "🎵 Music OFF";
+        }
+    } catch (e) {
+        localStorage.removeItem("musicCurrentTime");
+        btn.innerHTML = "🎵 Music OFF";
+    }
+});
+
+setInterval(() => {
+    try {
+        if (music && !music.paused && !isNaN(music.currentTime) && music.currentTime > 0) {
+            localStorage.setItem("musicCurrentTime", music.currentTime);
+        }
+    } catch (e) {}
+}, 1000);
+
+function toggleMusic() {
+    try {
+        if (!music.paused) {
+            music.pause();
+            btn.innerHTML = "🎵 Music OFF";
+            localStorage.setItem("musicStatus", "paused");
+        } else {
+            music.play().then(() => {
+                btn.innerHTML = "🎵 Music ON";
+                localStorage.setItem("musicStatus", "playing");
+            }).catch(error => {
+                alert("Nota: Sila pastikan fail lagu berada di dalam folder 'music' dengan nama yang betul.");
+            });
+        }
+    } catch(e) {
+        localStorage.clear();
+        btn.innerHTML = "🎵 Music OFF";
+    }
+}
+</script>
+
+</body>
+</html>

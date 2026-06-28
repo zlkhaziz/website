@@ -1,0 +1,419 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background-image: url("https://i.pinimg.com/1200x/2a/73/51/2a7351a99504163240c80f36a0dc692a.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+    background:#f4f6f9;
+    color:#B1113;
+}
+
+/* ==========================================
+   CSS UNTUK HEADER & NAVIGASI ATAS (DIKEMAS KINI)
+   ========================================== */
+
+header {
+    background-color: rgba(255, 255, 255, 0.6); /* Dikurangkan kepekatan putih supaya nampak lutsinar */
+    backdrop-filter: blur(10px);               /* Kesan kabur (blur) di belakang nav bar */
+    -webkit-backdrop-filter: blur(10px);       /* Sokongan tambahan untuk browser Safari */
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    
+    /* 🌟 MENUKAR WARNA SEMPADAN BAWAH MENJADI BIRU LEMBUT TRANSPARENT */
+    border-bottom: 1px solid rgba(30, 58, 138, 0.15); 
+    
+    /* Membuang bayang kasar dan diganti dengan bayang yang sangat lembut */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); 
+    width: 100%;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #1e3a8a;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+    font-size: 15px;
+    transition: 0.3s;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Warna menu apabila di-hover atau menu halaman aktif */
+nav ul li a:hover, 
+nav ul li a.active {
+    color: #1e3a8a;
+}
+
+/* Garisan animasi bawah menu */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #1e3a8a;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after, 
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+}
+
+.logo{
+    color:darkblue;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:darkblue;
+    font-weight:500;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+       linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+       url("https://i.pinimg.com/1200x/2a/73/51/2a7351a99504163240c80f36a0dc692a.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid darkblue;
+    margin-bottom:20px;
+}
+
+.hero-content h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.hero-content p{
+    max-width:600px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:white;
+    color:#2563eb;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+section{
+    padding:80px 10%;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#1e3a8a;
+}
+
+.card{
+    background:
+    linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+    url("https://i.pinimg.com/1200x/2a/73/51/2a7351a99504163240c80f36a0dc692a.jpg");
+    padding:20px;
+    margin:15px 0;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+
+.skills-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.skill{
+    background:#011040;
+    color:white;
+    padding:12px 20px;
+    border-radius:25px;
+}
+
+#contact{
+    text-align:center;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#1e3a8a;
+    color:white;
+}
+
+.gallery-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:30px;
+}
+
+.gallery-container img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.5s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.gallery-container img:hover{
+    transform:scale(1.1) rotate(3deg);
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+section{
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.slider{
+    width:500px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.slide{
+    width:100%;
+    animation: zoom 5s infinite;
+}
+
+@keyframes zoom{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.1);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+    }
+
+    nav ul{
+        margin-top:15px;
+    }
+
+    .hero-content h1{
+        font-size:2rem;
+    }
+
+  ```css
+.gallery-card{
+    width:300px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:0.5s;
+}
+
+.gallery-card:hover{
+    transform:translateY(-10px);
+}
+
+.gallery-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.gallery-card h3{
+    margin:15px 0 10px;
+    color:#1e3a8a;
+}
+
+.gallery-card p{
+    padding:0 15px 20px;
+}
+
+css id="n9x4eh"
+form{
+    width:100%;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:15px;
+    font-family:'Poppins', sans-serif;
+}
+
+textarea{
+    resize:none;
+}
+
+form .btn{
+    border:none;
+    cursor:pointer;
+}
+
+/* --- BAHAGIAN BUTANG MUZIK (PASTIKAN ADA PENUTUP '}' YANG BETUL) --- */
+
+.music-control {
+    position: fixed;
+    top: 20px;         /* Jarakkan sikit ke bawah supaya tak bertembung dengan logo */
+    left: 20px;
+    z-index: 9999;     /* Guna layer paling atas */
+}
+
+.music-control button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px !important;  /* '!important' memaksa pelayar guna bentuk bulat */
+    background: linear-gradient(145deg, #d9d9d9, #ffffff);
+    color: #1e3a8a;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    display: inline-block;
+    overflow: hidden;                /* Mengelakkan bucu jadi petak */
+}
+
+.music-control button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #cfcfcf, #e6e6e6);
+}
+
+.music-control button:active {
+    transform: scale(0.95);
+}
+
+.direct-link {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+/* Bekas susunan menegak untuk nama & jam */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Memastikan kandungan sentiasa di tengah */
+        }
+
+        .logo {
+            font-weight: 700;
+            color: #1e3a8a;
+            font-size: 22px;
+            letter-spacing: 1px;
+            line-height: 1.1; /* Mengurangkan ketinggian baris nama */
+            margin-bottom: 0; /* Menghapuskan margin bawah lalai h2 */
+            padding-bottom: 0;
+        }
+
+        /* Gaya tulisan jam live mengikut konfigurasi portfolio anda */
+        .live-clock {
+            font-size: 11px;
+            color: #475569;
+            font-weight: 500;
+            margin-top: 0px; /* Menghilangkan jarak atas supaya rapat dengan nama */
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Mengawal saiz ikon di dalam jam agar rapat dan selari */
+        .live-clock i {
+            font-size: 11px;
+            color: #475569;
+        }
+
+}

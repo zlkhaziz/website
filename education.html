@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | Zulaikha Abdul Aziz</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* CSS RESET & THEME SETUP */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://i.pinimg.com/736x/c3/3b/15/c33b15d31396bfa0f55966c9b3f3d3a0.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: rgba(255, 255, 255, 0.4); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01); 
+            width: 100%;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #1e3a8a;
+            font-size: 22px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .live-clock {
+            font-size: 11px;
+            color: #475569;
+            font-weight: 500;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.3s;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #1e3a8a;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #1e3a8a;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover::after, nav ul li a.active::after {
+            width: 100%;
+        }
+
+        /* HERO BANNER */
+        .hero-banner {
+            max-width: 1200px;
+            margin: 40px auto 30px;
+            width: calc(100% - 40px);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+            border-radius: 30px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.6) 70%, rgba(255, 255, 255, 0.2) 100%), 
+                        url('https://i.pinimg.com/736x/c3/3b/15/c33b15d31396bfa0f55966c9b3f3d3a0.jpg');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-banner-content {
+            width: 100%;
+            max-width: 650px; 
+            padding: 60px;
+            z-index: 2;
+        }
+
+        .hero-banner-content .tagline {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1e3a8a;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 4px 14px;
+            border-radius: 50px;
+            border: 1px solid rgba(30, 58, 138, 0.15);
+        }
+
+        .hero-banner-content .giant-name {
+            font-family: 'Poppins', serif;
+            font-size: 45px;
+            font-weight: 700;
+            color: #1e3a8a;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-banner-content .description {
+            font-size: 14.5px;
+            color: #1e293b;
+            font-weight: 500;
+            line-height: 1.8;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 15px;
+            border-radius: 16px;
+            border-left: 4px solid #1e3a8a;
+        }
+
+        /* MAIN WRAPPER */
+        main {
+            max-width: 1200px;
+            margin: 20px auto 80px;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        section h2 {
+            font-family: 'Poppins', serif;
+            font-size: 24px;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+            letter-spacing: 1.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 3px;
+            background: #1e3a8a;
+            border-radius: 2px;
+        }
+
+        /* TIMELINE DESIGN */
+        .timeline-container {
+            position: relative;
+            padding-left: 35px;
+            margin-left: 15px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: linear-gradient(to bottom, #1e3a8a 30%, rgba(255, 255, 255, 0.3) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -45px;
+            top: 5px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50px;
+            background: #ffffff;
+            border: 4px solid #1e3a8a;
+            box-shadow: 0 0 12px rgba(30, 58, 138, 0.3);
+            z-index: 3;
+            transition: 0.3s;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            background: #1e3a8a;
+            transform: scale(1.15);
+            box-shadow: 0 0 18px rgba(30, 58, 138, 0.5);
+        }
+
+        .timeline-card {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .timeline-card:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: translateX(8px);
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.06);
+        }
+
+        .edu-logo-wrapper {
+            width: 75px;
+            height: 75px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .edu-logo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .timeline-details {
+            flex-grow: 1;
+        }
+
+        .timeline-details h3 {
+            font-size: 19px;
+            color: #1e3a8a;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .meta-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 25px;
+            margin-bottom: 15px;
+        }
+
+        .meta-item {
+            font-size: 13px;
+            color: #475569;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .meta-item i {
+            color: #1e3a8a;
+            font-size: 14px;
+        }
+
+        .meta-item a {
+            text-decoration: none;
+            color: #1e3a8a;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .meta-item a:hover {
+            opacity: 0.8;
+        }
+
+        .timeline-desc {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #334155;
+        }
+
+        /* STRUKTUR GRID BARU UNTUK CORE FOCUS AREAS (BARIS & LAJUR KOTAK) */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 Lajur sekata */
+            gap: 20px;
+            width: 100%;
+        }
+
+        .focus-box {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.01);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .focus-box i {
+            font-size: 24px;
+            color: #1e3a8a;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 12px;
+            border-radius: 50px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.08);
+            transition: 0.3s;
+        }
+
+        .focus-box h4 {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: #1e3a8a;
+            letter-spacing: 0.5px;
+        }
+
+        .focus-box:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(30, 58, 138, 0.1);
+            border-color: rgba(30, 58, 138, 0.2);
+        }
+
+        .focus-box:hover i {
+            background: #1e3a8a;
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        /* GRID DUA LAJUR UNTUK ACCOMPLISHMENTS & GOALS */
+        .grid-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 35px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.55);
+            transform: translateY(-3px);
+        }
+
+        .custom-list {
+            list-style: none;
+        }
+
+        .custom-list li {
+            font-size: 14px;
+            color: #334155;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            line-height: 1.6;
+        }
+
+        .custom-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .custom-list li i {
+            color: #1e3a8a;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 6px;
+            border-radius: 50px;
+            font-size: 11px;
+            margin-top: 2px;
+            box-shadow: 0 2px 8px rgba(30, 58, 138, 0.08);
+            transition: 0.3s;
+        }
+
+        .glass-card:hover .custom-list li i {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* MUSIC CONTROL BUTTON */
+        .music-control {
+            position: fixed;
+            top: 85px;
+            left: 20px;
+            z-index: 9999;
+        }
+
+        .music-control button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(145deg, #ffffff, #e2e8f0);
+            color: #1e3a8a;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+        }
+
+        .music-control button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(145deg, #e2e8f0, #ffffff);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: rgba(255, 255, 255, 0.5); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            text-align: center;
+            padding: 25px;
+            margin-top: auto;
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #002445;
+        }
+
+        /* RESPONSIVE DESIGN BREAKPOINTS */
+        @media (max-width: 968px) {
+            .hero-banner {
+                min-height: 320px;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 60%, rgba(255, 255, 255, 0.75) 100%), 
+                            url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80');
+                background-size: cover;
+                background-position: center;
+            }
+            .hero-banner-content {
+                padding: 40px 25px;
+                text-align: center;
+                max-width: 100%;
+            }
+            .hero-banner-content .giant-name {
+                font-size: 34px;
+            }
+            .hero-banner-content .description {
+                margin: 0 auto;
+                border-left: none;
+                border-top: 4px solid #1e3a8a;
+            }
+            .focus-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 Lajur untuk tablet */
+            }
+            .grid-two-col {
+                grid-template-columns: 1fr;
+            }
+            .timeline-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 15px;
+            }
+            .meta-grid {
+                justify-content: center;
+            }
+            nav { flex-direction: column; gap: 15px; }
+            .logo-container { align-items: center; }
+            nav ul { gap: 15px; }
+            .music-control { top: auto; bottom: 20px; left: 20px; }
+        }
+
+        @media (max-width: 576px) {
+            .focus-grid {
+                grid-template-columns: 1fr; /* 1 Lajur penuh untuk telefon pintar */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo-container">
+            <h2 class="logo">ZULAIKHA ABDUL AZIZ</h2>
+            <div class="live-clock" id="liveClock">Loading date & time...</div>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="education.html" class="active">Education</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="memories.html">Memories</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="music-control">
+    <select id="trackSelect" onchange="changeTrack()" style="padding: 8px 12px; border-radius: 50px; border: 1px solid #cbd5e1; font-family: 'Poppins', sans-serif; font-size: 13px; color: #1e3a8a; font-weight: 500; background: white; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-right: 5px; outline: none;">
+        <option value="music/justin.mp4">Love, Maybe</option>
+        <option value="music/justin bie.mp4">Baby</option>
+        <option value="music/s.mp4">Blue</option>
+    </select>
+    
+    <button onclick="toggleMusic()" id="musicBtn">🎵 Music OFF</button>
+    
+    <audio id="bgmusic" loop>
+        <source id="musicSource" src="music/justin.mp4" type="audio/mp3">
+    </audio>
+</div>
+
+<!-- HERO BANNER -->
+<section class="hero-banner">
+    <div class="hero-banner-content">
+        <span class="tagline">Academic Milestones</span>
+        <h1 class="giant-name">MY EDUCATION</h1>
+        <p class="description">
+            A chronological timeline of my educational milestones, core academic domains, acquired competencies, and strategic professional objectives.
+        </p>
+    </div>
+</section>
+
+<main>
+
+    <!-- SECTION TIMELINE AKADEMIK -->
+    <section>
+        <h2>ACADEMIC BACKGROUND</h2>
+        
+        <div class="timeline-container">
+            
+            <!-- Item Timeline 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="edu-logo-wrapper">
+                        <img src="image/uitm.png" alt="UiTM Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fa-solid fa-graduation-cap" style="display:none; font-size:30px; color:#1e3a8a;"></i>
+                    </div>
+                    <div class="timeline-details">
+                        <h3>Diploma in Library Informatics</h3>
+                        <div class="meta-grid">
+                            <div class="meta-item"><i class="fa-solid fa-university"></i> Universiti Teknologi MARA (UiTM)</div>
+                            <div class="meta-item"><i class="fa-solid fa-calendar-alt"></i> 2023 - Present</div>
+                            <div class="meta-item">
+                                <i class="fa-solid fa-location-dot" style="color: #dc2626;"></i> 
+                                <a href="https://maps.app.goo.gl/hfwZM5AbxtUFyZmq5" target="_blank">Rembau, Negeri Sembilan ↗</a>
+                            </div>
+                        </div>
+                        <p class="timeline-desc">
+                            Currently exploring specialized tracks within Information Informatics. Developing actionable skills in managing records systems, digital archival appraisal, taxonomies, basic web architectures, and data cataloguing workflows.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Timeline 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="edu-logo-wrapper">
+                        <img src="image/smksp.jpeg" alt="School Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fa-solid fa-school" style="display:none; font-size:30px; color:#1e3a8a;"></i>
+                    </div>
+                    <div class="timeline-details">
+                        <h3>Sijil Pelajaran Malaysia (SPM)</h3>
+                        <div class="meta-grid">
+                            <div class="meta-item"><i class="fa-solid fa-school"></i> SMK Tinggi Port Dickson</div>
+                            <div class="meta-item"><i class="fa-solid fa-calendar-alt"></i> 2018 - 2022</div>
+                            <div class="meta-item">
+                                <i class="fa-solid fa-location-dot" style="color: #dc2626;"></i> 
+                                <a href="https://maps.app.goo.gl/mbVDBBHWu7YvAEuK9" target="_blank">Kampung Kerinchi, Bangsar South ↗</a>
+                            </div>
+                        </div>
+                        <p class="timeline-desc">
+                            Completed formal secondary curriculum while actively engaging in peer leadership roles, team-driven assignments, and foundational soft skills development.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION SUBJEK KEGEMARAN (KINI DALAM BENTUK ROW & COLUMN BOX GRID) -->
+    <section>
+        <h2>CORE FOCUS AREA</h2>
+        <div class="focus-grid">
+            <div class="focus-box">
+                <i class="fa-solid fa-folder-open"></i>
+                <h4>Records Management</h4>
+            </div>
+            <div class="focus-box">
+                <i class="fa-solid fa-box-archive"></i>
+                <h4>Archives Management</h4>
+            </div>
+            <div class="focus-box">
+                <i class="fa-solid fa-list-check"></i>
+                <h4>Cataloguing & Indexing</h4>
+            </div>
+            <div class="focus-box">
+                <i class="fa-solid fa-sitemap"></i>
+                <h4>Classification Architectures</h4>
+            </div>
+            <div class="focus-box">
+                <i class="fa-solid fa-code"></i>
+                <h4>Web Development UI/UX</h4>
+            </div>
+            <div class="focus-box">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h4>Digital Information Services</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- GRID DUA LAJUR UNTUK PENCAPAIAN & MATLAMAT -->
+    <div class="grid-two-col">
+        <section>
+            <h2>KEY ACCOMPLISHMENTS</h2>
+            <div class="glass-card">
+                <ul class="custom-list">
+                    <li><i class="fa-solid fa-check"></i> Completed systematic industrial training components effectively.</li>
+                    <li><i class="fa-solid fa-check"></i> Programmed live responsive micro-web applications via modern HTML/CSS.</li>
+                    <li><i class="fa-solid fa-check"></i> Delivered technical group dynamic papers and standard academic reports.</li>
+                    <li><i class="fa-solid fa-check"></i> Mastered basic principles of enterprise physical/digital asset preservation.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>FUTURE MILESTONES</h2>
+            <div class="glass-card">
+                <ul class="custom-list">
+                    <li><i class="fa-solid fa-arrow-right"></i> Expand foundational literacy in global digital archiving and Cloud asset structures.</li>
+                    <li><i class="fa-solid fa-arrow-right"></i> Advance practical UI/UX code comprehension to design agile corporate repositories.</li>
+                    <li><i class="fa-solid fa-arrow-right"></i> Bridge contemporary automated information services with data analytical skills.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Zulaikha Abdul Aziz. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Jam & Tarikh Live
+function updateClock() {
+    const clockElement = document.getElementById("liveClock");
+    if (clockElement) {
+        const now = new Date();
+        const optionsDate = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        const dateString = now.toLocaleDateString('en-MY', optionsDate);
+        const timeString = now.toLocaleTimeString('en-MY', { hour12: false });
+        clockElement.innerHTML = `<i class="fa-regular fa-calendar-days"></i> ${dateString} | <i class="fa-regular fa-clock"></i> ${timeString}`;
+    }
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// Sistem Muzik
+const music = document.getElementById("bgmusic");
+const btn = document.getElementById("musicBtn");
+const trackSelect = document.getElementById("trackSelect");
+
+if (music) {
+    music.volume = 0.8;
+}
+
+function getSavedTime() {
+    try {
+        const musicTime = localStorage.getItem("musicCurrentTime");
+        if (musicTime) {
+            const parsedTime = parseFloat(musicTime);
+            if (!isNaN(parsedTime) && isFinite(parsedTime) && parsedTime > 0) {
+                return parsedTime;
+            }
+        }
+    } catch (e) {}
+    return 0;
+}
+
+function changeTrack() {
+    const selectedTrack = trackSelect.value;
+    const isPlaying = !music.paused;
+
+    localStorage.setItem("selectedTrack", selectedTrack);
+    music.src = selectedTrack;
+    music.load();
+    localStorage.setItem("musicCurrentTime", 0);
+
+    if (isPlaying) {
+        music.play().then(() => {
+            btn.innerHTML = "🎵 Music ON";
+        }).catch(err => {
+            btn.innerHTML = "🎵 Music OFF";
+            localStorage.setItem("musicStatus", "paused");
+        });
+    }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    try {
+        const musicStatus = localStorage.getItem("musicStatus");
+        const savedTrack = localStorage.getItem("selectedTrack");
+        const savedTime = getSavedTime();
+
+        if (savedTrack && trackSelect) {
+            trackSelect.value = savedTrack;
+            music.src = savedTrack;
+            music.load();
+        }
+
+        if (savedTime > 0) {
+            music.addEventListener('loadedmetadata', function() {
+                music.currentTime = savedTime;
+            }, { once: true });
+        }
+
+        if (musicStatus === "playing") {
+            let playPromise = music.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    btn.innerHTML = "🎵 Music ON";
+                }).catch(err => {
+                    btn.innerHTML = "🎵 Music OFF";
+                    localStorage.setItem("musicStatus", "paused");
+                });
+            }
+        } else {
+            btn.innerHTML = "🎵 Music OFF";
+        }
+    } catch (e) {
+        localStorage.removeItem("musicCurrentTime");
+        btn.innerHTML = "🎵 Music OFF";
+    }
+});
+
+setInterval(() => {
+    try {
+        if (music && !music.paused && !isNaN(music.currentTime) && music.currentTime > 0) {
+            localStorage.setItem("musicCurrentTime", music.currentTime);
+        }
+    } catch (e) {}
+}, 1000);
+
+function toggleMusic() {
+    try {
+        if (!music.paused) {
+            music.pause();
+            btn.innerHTML = "🎵 Music OFF";
+            localStorage.setItem("musicStatus", "paused");
+        } else {
+            music.play().then(() => {
+                btn.innerHTML = "🎵 Music ON";
+                localStorage.setItem("musicStatus", "playing");
+            }).catch(error => {
+                alert("Nota: Sila pastikan fail lagu berada di dalam folder 'music' dengan nama yang betul.");
+            });
+        }
+    } catch(e) {
+        localStorage.clear();
+        btn.innerHTML = "🎵 Music OFF";
+    }
+}
+</script>
+
+</body>
+</html>
